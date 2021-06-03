@@ -21,7 +21,7 @@ namespace MovieStarTask1
           
 
         }
-        public static void Age(string dateOfBirth) // Easy way to get the age but not as accurate.
+        public static void Age(string dateOfBirth) // Easy way to get the age but not accurate.
         {
             var customerBY = DateTime.Parse(dateOfBirth).Year;
             var today = DateTime.Now.Year;
@@ -33,6 +33,8 @@ namespace MovieStarTask1
         }
 
         public static void AgeCalculation2(string dateOfBirth) // More accurage but uglier way.
+           // No input validations entered (considered the info is API)
+
         {
             var dobApi = DateTime.Parse(dateOfBirth);
             int now = int.Parse(DateTime.Now.ToString("yyyyMMdd"));
