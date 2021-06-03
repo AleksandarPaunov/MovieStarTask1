@@ -16,17 +16,9 @@ namespace MovieStarTask1
 
             var jsonText = File.ReadAllText("input.txt"); 
             var movieStars = JsonConvert.DeserializeObject<IList<MovieStar>>(jsonText);
+            PrintMovieStars(movieStars);
 
-            foreach (var star in movieStars)
-            {
-                Console.WriteLine(star.Name +" "+star.Surname);
-                Console.WriteLine(star.Sex);
-                Console.WriteLine(star.Nationality);
-                
-                //Console.WriteLine(DateTime.Now.Year-DateTime.Parse(star.DateOfBirth).Year+" years old");
-                //Age(star.DateOfBirth);
-                AgeCalculation2(star.DateOfBirth);
-            }
+          
 
         }
         public static void Age(string dateOfBirth) // Easy way to get the age but not as accurate.
@@ -50,5 +42,20 @@ namespace MovieStarTask1
             Console.WriteLine(age + " years old");
 
         }
+
+        public static void PrintMovieStars(IList<MovieStar>movieStars)
+        {
+            foreach (var star in movieStars)
+            {
+                Console.WriteLine(star.Name + " " + star.Surname);
+                Console.WriteLine(star.Sex);
+                Console.WriteLine(star.Nationality);
+
+                //Console.WriteLine(DateTime.Now.Year-DateTime.Parse(star.DateOfBirth).Year+" years old");
+                //Age(star.DateOfBirth);
+                AgeCalculation2(star.DateOfBirth);
+                Console.WriteLine();
+            }
+        }  //Prints the API data
     }
 }
